@@ -1,0 +1,41 @@
+<html>
+<head>
+
+
+</head>
+<body>
+<p>localScore:</p>
+<p id="local"></p>
+
+
+<button type="button" onclick="clickLocalCounter()">LocalScoreIncrement</button>
+<button type="button" onclick="clickSessionCounter()">SessionScoreIncrement</button>
+
+<p>Session Score:</p>
+<p id="session">0</p>
+
+<script>
+
+clickLocalCounter();
+    localStorage.clickcount=0;
+function clickLocalCounter() {
+  if (localStorage.clickcount) {
+    localStorage.clickcount = Number(localStorage.clickcount)+1;
+  } else {
+    localStorage.clickcount = 1;
+  }
+  document.getElementById("local").innerHTML = localStorage.clickcount;
+}
+
+
+function clickSessionCounter() {
+  if (sessionStorage.clickcount) {
+    sessionStorage.clickcount = Number(sessionStorage.clickcount) + 1;
+  } else {
+    sessionStorage.clickcount = 1;
+    }
+  document.getElementById("session").innerHTML = sessionStorage.clickcount;
+}
+</script>
+</body>
+</html>
